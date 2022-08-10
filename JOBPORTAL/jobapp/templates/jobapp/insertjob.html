@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+      #header
+      {
+         text-align: center;
+         color: white;
+         height:pink;
+         width:100%;
+         background-color:black;
+         text-decoration: none;
+
+         
+      }
+    
+        #middel
+        {
+           text-align: center;
+           color: white;
+           height:pink;
+           width:100%;
+           background-color:black;
+           
+        }
+
+      </style>
+
+</head>
+<body>
+  
+    <center>
+      <div id="header">
+        <form action="insertjob" method="post">
+            {% csrf_token %}
+            jobtitle:<input type="text" name="txtt" placeholder="jobtitle" required/><br><br>
+            jobdiscription:<input type="text" name="txtd" placeholder="jobdiscription" required/><br><br>
+            experince:<input type="text" name="txte" placeholder="experince" required/><br><br>
+            technology:<input type="text" name="txtte" placeholder="technology"required /><br><br>
+            postdate:<input type="text" name="txtp" placeholder="postdate" required/><br><br>
+            duedate:<input type="text" name="txtdu" placeholder="duedate" required/><br><br>
+            <input type="submit"name="btnsubmit" value="insert"/>
+            <br><br>
+        </form>
+      
+</div>
+    </center>
+</body>
+</html>

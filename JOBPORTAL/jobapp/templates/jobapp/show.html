@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+</head>
+<body bgcolor="#D5D8DC">
+    <form action=" " method="post">
+        {% csrf_token %}
+     <table width="700px" height="800" align="center">
+         <tr>
+             <td width="200px" bgcolor="1c2833" style="color:white; padding: 20px;">
+                 <img src="/static/image/YOGESH PIK1.jpg"height="300px" style=" border-radius:50%;"alt="">
+                 <h1>Personal details</h1><hr>
+                 {% for d1 in d %}
+                 <p><b>Name</b>:{{d1.name}}<br><br>
+                 <b>Address</b>:{{d1.Address}}<br><br>
+                 <b>Gender</b>:{{d1.gender}}<br><br>
+                 <b>Localitiy</b>:{{d1.locality}}<br><br>
+                 <b>City</b>:{{d1.city}}<br><br>
+                 <b>Pin</b>:{{d1.pin}}<br><br>
+                 <b>State</b>:{{d1.state}}<br><br>
+                 <b>Phone</b>: {{d1.mobile}}<br><br>
+                 <b>Email address</b>:{{d1.email}}<br><br>
+                 <b>Job_City</b>:{{d1.job_city}}<br><br>
+                 <b>linkedin</b>:{{d1.linkedin}}<br><br>
+                 </p>
+                 
+                 </td>
+             <td width="500px" bgcolor="#FDFEFE" style="padding:10px">
+                 <h1>Objective</h1><hr>
+                 <p>{{d1.Objective}}</p><br><br>
+
+                <h2>Work experience</h2><hr>
+                <p>{{d1.Workexperience}}</p><br><br>
+
+                <h3>EDUCATION QUALIFICATION</h3><hr><br>
+                <p><b>{{d1.course}}</b>in &nbsp{{d1.branch}}&nbspwith&nbsp{{d1.percentage}}%&nbsp&nbsp from&nbsp{{d1.univercity}}&nbspin&nbsp{{d1.Passingyear}}.</p><br><br>
+                <p><b>{{d1.dcourse}}</b>in &nbsp{{d1.dbranch}}&nbspwith{{d1.dpercentage}}%&nbsp&nbsp from&nbsp{{d1.dunivercity}}&nbspin&nbsp{{d1.dPassingyear}}</p><br><br>
+                <p><b>{{d1.gcourse}}</b>in &nbsp{{d1.gbranch}}&nbspwith&nbsp{{d1.gpercentage}}%&nbsp&nbsp from&nbsp{{d1.gunivercity}}&nbspin&nbsp{{d1.gPassingyear}}</p><br><br>
+                
+                <h3>IT SKILLS</h3><hr><br>
+                <p>{{d1.ITSKILLS}}</p><br><br>
+
+                <h2>PROJECTS</h2><hr>
+                <p>{{d1.PROJECTS}}</p><br><br>
+
+                
+                <h2>TRAININGS</h2><hr>
+                <p>{{d1.TRAININGS}}</p><br><br>
+
+                 
+                <h2>HOBBIES & INTEREST</h2><hr>
+                <p>{{d1.HOBBIESINTEREST}}</p><br><br>
+
+                <h2>DECLARATION</h2><hr>
+                <p>{{d1.DECLARATION}}</p><br><br>
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b><p>{{d1.sname}}</p></b>
+             </td>
+            </tr>
+     </table>{% endfor %}
+    <br><br>
+    </form>
+</body>
+</html>

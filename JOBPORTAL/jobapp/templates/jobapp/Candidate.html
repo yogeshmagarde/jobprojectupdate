@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+      #header
+      {
+      
+         height:50;
+         width: 100;
+         background-color: black;
+      }
+      #middlepart1
+        {
+            
+            
+           background-color:rgb(144, 205, 225);
+        }
+      </style>
+</head>
+<body>
+  <div id="header">
+    <a href="dash"><font color="white" font size="5">Home</font></a>
+         <a href="job"><font color="white" font size="5">job</font></a>                                                                             
+         <a href="Logout"><font color="white" font size="5">Logout</font></a>
+        </div>
+        <div id="middlepart1">
+    <center><h1>Add candidate Recorde Form Here</h1>
+        <form action="Candidate " method="post">
+            {% csrf_token %}
+            <pre>
+              Name<input type="text" name="cname" placeholder="cname"/><br><br>
+            email:<input type="email" name="txtemail" placeholder="enter email"><br><br>
+            jobid:<select name="ddljob">
+                  <option value="">select Job profile</option>
+                {% for data in res1 %}
+                   {% if data.id == jid %}
+                      <option value="{{data.id}}"selected>{{data.jobtitle}}</option>
+                   {% endif %}
+                    <option value="{{data.id}}">{{data.jobtitle}}</option>
+                {% endfor %}
+            </select>
+            <br><br>
+          DD/MM/YY<input type="date" name="applydate" placeholder=" enter date" /><br><br>
+             
+                  <input type="submit"name="btnsubmit" value="submit"/><br><br>
+                  {{msg}}
+            </pre>
+            <a href="cds"><font color="yellow" font size="4">check candidate data</font></a>
+        </form>
+      </center>
+      </div>
+</body>
+</html>
